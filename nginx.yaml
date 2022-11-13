@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nging-alpine-v2
+  namespace: proyecto
+  labels:
+    app: nginx
+spec:
+  containers:
+    - image: nginx:stable-alpine
+      name: nginx-alpine-v2      
+      ports:
+      - containerPort: 80

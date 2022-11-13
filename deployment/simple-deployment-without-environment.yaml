@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployments-simple-deployment-with-environment-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deployments-simple-deployment-with-environment-app
+  template:
+    metadata:
+      labels:
+        app: deployments-simple-deployment-with-environment-app
+    spec:
+      containers:
+        - name: busybox
+          image: busybox
+          resources:
+            limits:
+              memory: "200Mi"
+              cpu: "500m"
+          command:
+            - sleep
+            - "3600"

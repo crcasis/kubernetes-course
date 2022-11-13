@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-ansible
+  namespace: configmap
+data:
+  microservice.properties: |
+    aws_token="z%4vL$H/6ey2Gfct9ULQq*rx.9hx+&"
+    sqs="https://172.16.0.2:9000"
+  ui.properties: |
+    service_name="rtv"
+    environment="prod"

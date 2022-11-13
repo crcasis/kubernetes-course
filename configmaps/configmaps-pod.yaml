@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web
+spec:
+  containers:
+    - name: web
+      image: httpd:latest
+      envFrom:
+        - configMapRef:
+            name: rds-configmap

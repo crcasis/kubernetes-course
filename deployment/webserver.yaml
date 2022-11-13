@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver-simple-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webserver-simple-app
+  template:
+    metadata:
+      labels:
+        app: webserver-simple-app
+    spec:
+      containers:
+        - name: webserver-prueba
+          image: python:3
+          command:
+            - python
+            - -m
+            - http.server
+          ports:
+            - containerPort: 8000

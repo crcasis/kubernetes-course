@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: cristestrc
+spec:
+  replicas: 2
+  selector:
+    app: cristestrc
+  template:
+    metadata:
+      name: cristestrc
+      labels:
+        app: cristestrc
+    spec:
+      containers:
+      - name: cristestrc
+        image: nickchase/soaktest
+        ports:
+        - containerPort: 80
