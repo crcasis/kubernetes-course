@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-web
+  labels:
+    env: dev
+spec:
+  containers:
+    - name: web
+      image: nginx
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
